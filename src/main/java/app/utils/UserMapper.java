@@ -11,7 +11,7 @@ public class UserMapper {
         if (data.containsKey("id"))
             user.setId(Long.parseLong(data.get("id")));
         if (data.containsKey("first_name"))
-            user.setFirstName(data.get("first_name"));
+            user.setName(data.get("first_name"));
         if (data.containsKey("email"))
             user.setEmail(data.get("email"));
         return user;

@@ -9,10 +9,10 @@ import jakarta.persistence.*;
 // @Entity
 // Вказує, що клас є сутністю.
 //
-// @Table(name = "contacts")
+// @Table(name = "Hibernate_Users")
 // Вказує таблицю в БД, з якою зіставлено цей об'єкт.
 @Entity
-@Table(name = "users")
+@Table(name = "Hibernate_Users")
 public class User {
 
     // @Id
@@ -36,8 +36,8 @@ public class User {
     // Тут, найменування стовпця в БД
     // не збігається із найменуванням змінної.
     // Атрибут name вирішує проблему.
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "name")
+    private String name;
 
 
     @Column(name = "email")
@@ -51,12 +51,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
 
@@ -71,6 +71,6 @@ public class User {
     @Override
     public String toString() {
         return  "id " + id +
-                ", " + firstName + " " + ", email " + email + "\n";
+                ", " + name + " " + ", email " + email + "\n";
     }
 }
