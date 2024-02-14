@@ -9,10 +9,10 @@ import jakarta.persistence.*;
 // @Entity
 // Вказує, що клас є сутністю.
 //
-// @Table(name = "Hibernate_Users")
+// @Table(name = "New_Hibernate_Users")
 // Вказує таблицю в БД, з якою зіставлено цей об'єкт.
 @Entity
-@Table(name = "Hibernate_Users")
+@Table(name = "New_Hibernate_Users")
 public class User {
 
     // @Id
