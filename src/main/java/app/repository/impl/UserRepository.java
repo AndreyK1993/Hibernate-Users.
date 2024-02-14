@@ -177,18 +177,4 @@ public class UserRepository implements AppRepository<User> {
             return Optional.empty();
         }
     }
-
-    // Перевірка наявності об'єкту/сутності за певним id у БД
-    private boolean isEntityWithSuchIdExists(User user) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // Перевірка наявності об'єкту за певним id
-            user = session.get(User.class, user.getId());
-            if (user != null) {
-                Query<User> query = session.createQuery("FROM Users", User.class);
-                query.setMaxResults(1);
-                query.getResultList();
-            }
-            return user != null;
-        }
-    }
 }
