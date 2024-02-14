@@ -47,7 +47,7 @@ public class UserService {
                                 .append(") ")
                                 .append(user.toString())
                 );
-                return "\nCONTACTS:\n" + stringBuilder;
+                return "\nUSERS:\n" + stringBuilder;
             } else return Constants.DATA_ABSENT_MSG;
         } else return Constants.DATA_ABSENT_MSG;
     }

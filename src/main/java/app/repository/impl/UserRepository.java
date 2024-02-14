@@ -55,7 +55,7 @@ public class UserRepository implements AppRepository<User> {
             transaction = session.beginTransaction();
             // Формування колекції даними з БД через HQL-запит
             List<User> list =
-                    session.createQuery("FROM Contact", User.class)
+                    session.createQuery("FROM User", User.class)
                             .list();
             // Транзакція виконується
             transaction.commit();
@@ -157,7 +157,7 @@ public class UserRepository implements AppRepository<User> {
             // HQL-запит.
             // :[parameter name] - іменований параметр (named parameter),
             // двокрапка перед іменем.
-            String hql = " FROM Contact c WHERE c.id = :id";
+            String hql = " FROM User c WHERE c.id = :id";
             // Створюємо запит
             Query<User> query = session.createQuery(hql, User.class);
             query.setParameter("id", id);
@@ -184,7 +184,7 @@ public class UserRepository implements AppRepository<User> {
             // Перевірка наявності об'єкту за певним id
             user = session.get(User.class, user.getId());
             if (user != null) {
-                Query<User> query = session.createQuery("FROM Contact", User.class);
+                Query<User> query = session.createQuery("FROM User", User.class);
                 query.setMaxResults(1);
                 query.getResultList();
             }
