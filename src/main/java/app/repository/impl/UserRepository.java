@@ -23,7 +23,7 @@ public class UserRepository implements AppRepository<User> {
             // HQL-запит.
             // :[parameter name] - іменований параметр (named parameter),
             // двокрапка перед іменем.
-            String hql = "INSERT INTO Hibernate_Users (name, email) " +
+            String hql = "INSERT INTO Users (name, email) " +
                     "VALUES (:name, :email)";
             // Створення HQL-запиту
             MutationQuery query = session.createMutationQuery(hql);
@@ -55,7 +55,7 @@ public class UserRepository implements AppRepository<User> {
             transaction = session.beginTransaction();
             // Формування колекції даними з БД через HQL-запит
             List<User> list =
-                    session.createQuery("FROM Hibernate_Users", User.class)
+                    session.createQuery("FROM Users", User.class)
                             .list();
             // Транзакція виконується
             transaction.commit();
@@ -83,7 +83,7 @@ public class UserRepository implements AppRepository<User> {
                 // HQL-запит.
                 // :[parameter name] - іменований параметр (named parameter),
                 // двокрапка перед іменем.
-                String hql = "UPDATE Hibernate_Users SET name = :name, " +
+                String hql = "UPDATE Users SET name = :name, " +
                         " email = :email WHERE id = :id";
                 // Створення HQL-запиту
                 MutationQuery query = session.createMutationQuery(hql);
@@ -124,7 +124,7 @@ public class UserRepository implements AppRepository<User> {
                 // HQL-запит.
                 // :[parameter name] - іменований параметр (named parameter),
                 // двокрапка перед іменем.
-                String hql = "DELETE FROM Hibernate_Users WHERE id = :id";
+                String hql = "DELETE FROM Users WHERE id = :id";
                 // Створення HQL-запиту
                 MutationQuery query = session.createMutationQuery(hql);
                 // Формування конкретних значень для певного іменованого параметра
@@ -157,7 +157,7 @@ public class UserRepository implements AppRepository<User> {
             // HQL-запит.
             // :[parameter name] - іменований параметр (named parameter),
             // двокрапка перед іменем.
-            String hql = " FROM Hibernate_Users c WHERE c.id = :id";
+            String hql = " FROM Users c WHERE c.id = :id";
             // Створюємо запит
             Query<User> query = session.createQuery(hql, User.class);
             query.setParameter("id", id);
@@ -184,7 +184,7 @@ public class UserRepository implements AppRepository<User> {
             // Перевірка наявності об'єкту за певним id
             user = session.get(User.class, user.getId());
             if (user != null) {
-                Query<User> query = session.createQuery("FROM Hibernate_Users", User.class);
+                Query<User> query = session.createQuery("FROM Users", User.class);
                 query.setMaxResults(1);
                 query.getResultList();
             }
