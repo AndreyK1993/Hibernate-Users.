@@ -12,9 +12,9 @@ public class UserValidator {
         if (data.containsKey("id") & AppValidator.isIdValid(data.get("id")))
             errors.put("id", Constants.WRONG_ID_MSG);
 
-        if (data.containsKey("first_name")) {
-            if (data.get("first_name") != null & data.get("first_name").isEmpty())
-                errors.put("first name", Constants.INPUT_REQ_MSG);
+        if (data.containsKey("name")) {
+            if (data.get("name") != null & data.get("name").isEmpty())
+                errors.put("name", Constants.INPUT_REQ_MSG);
         }
 
         if (data.containsKey("email") & AppValidator.isEmailValid(data.get("email")))

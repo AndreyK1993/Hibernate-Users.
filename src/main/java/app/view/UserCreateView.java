@@ -10,7 +10,7 @@ public class UserCreateView {
     public Map<String, String> getData() {
         Scanner scanner = new Scanner(System.in);
         Map<String, String> data = new HashMap<>();
-        System.out.print("Enter first name: ");
+        System.out.print("Enter name: ");
         data.put("first_name", scanner.nextLine().trim());
         System.out.print("Enter email in format example@mail.com: ");
         data.put("email", scanner.nextLine().trim());
